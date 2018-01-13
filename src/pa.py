@@ -115,7 +115,7 @@ def get_secret(lenmax=8):
 def do_parse_args():
     parser = argparse.ArgumentParser(
         prog="pa.py",
-        usage="python3.6 pa.py 8",
+        usage="python3 pa.py 8",
         description="ordinary password generator",
         add_help=True)
 
