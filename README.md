@@ -16,12 +16,32 @@ when ristriction for symbol character
 then use any symbol character.  
 (see sample_papy.py)  
 
-PyPagen is generator class  
-get_secret is method for one password string.  
+*class*  
+* PyPagen  
+generator class  
 
-get\_secret_list is method for any password candicate list.  
+*method(instance method of PyPagen)*  
+* get_secret  
+one password string.  
 
-module function get_secret for easy used.  
+* get\_secret_list  
+any password candicate list.  
+
+* set_param  
+<dl>
+<dt>seq\_sbl</dt><dd>symbol string sequence default:SEQ_SBL</dd>
+<dt>lenmin</dt><dd>password minimum length default:8</dd>
+<dt>lenmax</dt><dd>password max length default:8</dd>
+<dt>up</dt><dd>use upper alphabet default:True</dd>
+<dt>low</dt><dd>use lower alphabet default:True</dd>
+<dt>num</dt><dd>use number default:True</dd>
+<dt>symbol</dt><dd>use symbol default:True</dd>
+<dt>strict</dt><dd>it sure to using char type(if true). this is prior to minimum length.</dd>
+</dl>
+
+*module function*  
+* get_secret  
+for easy used.  
 
 ---  
 **sample_papy.py**  
