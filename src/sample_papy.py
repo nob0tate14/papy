@@ -1,7 +1,7 @@
 '''
 Created on 2018/01/13
 
-@author: u16
+@author: nob0tate14
 '''
 import os
 
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     pg = PyPagen()
     print(pg.get_secret())
     print(pg.get_secret(lenmax=6))
-    print(pg.get_secret(symbol=False, lenmin=3, lenmax=16))
+    print(pg.get_secret(strict=False, lenmin=3, lenmax=3))
     print(pg.get_secret(seq_sbl="!%$&'", num=False, lenmin=16, lenmax=24))
 
     pg.set_param(symbol=False, lenmax=4)
