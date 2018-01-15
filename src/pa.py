@@ -30,16 +30,22 @@ class PyPagen(object):
     SEQ_NUM = "0123456789"
     SEQ_SBL = "\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
 
-    def __init__(self, *, seq_sbl=SEQ_SBL, lenmin=8, lenmax=8,
+    def __init__(self, *, seq_alw=SEQ_ALW, seq_aup=SEQ_AUP, seq_num=SEQ_NUM,
+                 seq_sbl=SEQ_SBL, lenmin=8, lenmax=8,
                  up=True, low=True, num=True, symbol=True, strict=True):
         '''
         Constructor
         '''
-        self.set_param(seq_sbl=seq_sbl, lenmin=lenmin, lenmax=lenmax,
+        self.set_param(seq_alw=seq_alw, seq_aup=seq_aup, seq_num=seq_num,
+                       seq_sbl=seq_sbl, lenmin=lenmin, lenmax=lenmax,
                        up=up, low=low, num=num, symbol=symbol, strict=strict)
 
-    def set_param(self, *, seq_sbl=SEQ_SBL, lenmin=8, lenmax=8,
+    def set_param(self, *, seq_alw=SEQ_ALW, seq_aup=SEQ_AUP, seq_num=SEQ_NUM,
+                  seq_sbl=SEQ_SBL, lenmin=8, lenmax=8,
                   up=True, low=True, num=True, symbol=True, strict=True):
+        self.seq_alw = seq_alw
+        self.seq_aup = seq_aup
+        self.seq_num = seq_num
         self.seq_sbl = seq_sbl
         self.lenmin = lenmin
         self.lenmax = lenmax
@@ -49,9 +55,15 @@ class PyPagen(object):
         self.symbol = symbol
         self.strict = strict
 
-    def get_secret(self, *, seq_sbl=None, lenmin=None, lenmax=None,
+    def get_secret(self, *, seq_alw=None, seq_aup=None, seq_num=None,
+                   seq_sbl=None, lenmin=None, lenmax=None,
                    up=None, low=None, num=None, symbol=None, strict=None):
-        # print(seq_sbl)
+        if seq_alw is None:
+            seq_alw = self.seq_alw
+        if seq_aup is None:
+            seq_aup = self.seq_aup
+        if seq_num is None:
+            seq_num = self.seq_num
         if seq_sbl is None:
             seq_sbl = self.seq_sbl
         if lenmin is None:
@@ -77,17 +89,17 @@ class PyPagen(object):
 
         seq_list = []
         if up is True:
-            seq_list.append(PyPagen.SEQ_ALW)
+            seq_list.append(seq_alw)
             if strict is True:
-                secrt += secrets.choice(PyPagen.SEQ_ALW)
+                secrt += secrets.choice(seq_alw)
         if low is True:
-            seq_list.append(PyPagen.SEQ_AUP)
+            seq_list.append(seq_aup)
             if strict is True:
-                secrt += secrets.choice(PyPagen.SEQ_AUP)
+                secrt += secrets.choice(seq_aup)
         if num is True:
-            seq_list.append(PyPagen.SEQ_NUM)
+            seq_list.append(seq_num)
             if strict is True:
-                secrt += secrets.choice(PyPagen.SEQ_NUM)
+                secrt += secrets.choice(seq_num)
         if symbol is True:
             seq_list.append(seq_sbl)
             if strict is True:

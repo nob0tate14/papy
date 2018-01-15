@@ -23,6 +23,7 @@ if __name__ == '__main__':
     print(pg.get_secret(lenmax=6))
     print(pg.get_secret(strict=False, lenmin=3, lenmax=3))
     print(pg.get_secret(seq_sbl="!%$&'", num=False, lenmin=16, lenmax=24))
+    print(pg.get_secret(seq_alw="ab", num=False, symbol=False, lenmin=10))
 
     pg.set_param(symbol=False, lenmax=4)
     print(pg.get_secret_list(10))
