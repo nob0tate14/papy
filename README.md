@@ -12,8 +12,8 @@ password generator
 you can choice password character  
 Upper and lower alphabet,numeric and symbols  
 
-when ristriction for symbol character  
-then use any symbol character.  
+when ristriction for character  
+then use any characters.  
 (see sample_papy.py)  
 
 *class*  
@@ -22,30 +22,62 @@ generator class
 
 *method(instance method of PyPagen)*  
 * get_secret  
-one password string.  
+get one password string.  
 
 * get\_secret_list  
-any password candicate list.  
+get any password candicate list.  
 
-* set_param  
-<dl>
-<dt>seq\_sbl</dt><dd>symbol string sequence default:SEQ_SBL</dd>
-<dt>lenmin</dt><dd>password minimum length default:8</dd>
-<dt>lenmax</dt><dd>password max length default:8</dd>
-<dt>up</dt><dd>use upper alphabet default:True</dd>
-<dt>low</dt><dd>use lower alphabet default:True</dd>
-<dt>num</dt><dd>use number default:True</dd>
-<dt>symbol</dt><dd>use symbol default:True</dd>
-<dt>strict</dt><dd>it sure to using char type(if true). this is prior to minimum length.</dd>
-</dl>
+* set\_param  
+set parameter  
 
 *module function*  
-* get_secret  
+* get\_secret  
 for easy used.  
 
----  
 **sample_papy.py**  
 usage sample  
+
+---  
+
+```
+parameters for set_param
+(same to constractor)
+seq_alw
+  upper alphabet string sequence. 
+  default:SEQ_ALW
+seq_aup
+  lower alphabet string sequence. 
+  default:SEQ_AUP
+seq_num
+  number string sequence. 
+  default:SEQ_NUM
+seq_sbl
+  symbol string sequence. 
+  default:SEQ_SBL
+lenmin
+  password minimum length. 
+  default:8
+lenmax
+  password max length. 
+  default:8
+up
+  use upper alphabet. 
+  default:True
+low
+  use lower alphabet. 
+  default:True
+num
+  use number. 
+  default:True
+symbol
+  use symbol.
+  default:True
+strict
+  it sure to using char type(if true).  
+  this is prior to minimum length.  
+  default:True
+
+```
 
 ## Requirement
 
@@ -55,14 +87,14 @@ usage sample
 9[jMm,4u
 
 >>python3 sample_papy.py 
-00Yd-Yvg
-:wR_R1AT
-%Vn6O$0s3a
-]yvUI$7L
-:9qoP)
-2OzkrTYo35lo235
-u!ClIwt&WOwM!dVylnU
-['N63y', '86Ij', '5WHx', 'jVE4', 'Qf79', 'wPM2', 'eSK1', 'ySJ7', '3OWj', 'wVw6']
+H0zdq:sM
+U6R2l_)2
+}@0NPcw,7u
+Eo4F;Q27
+ps~2E@
+ak7
+%RTRuMAmAzB'$pY!%CnE'
+['I29k', 'Vu0g', 'c8XQ', 'x0IO', 'XyZ2', 'V96y', 'bqL2', 'oX9v', 'PmT1', '7hNL']
 
 ```
 
