@@ -17,14 +17,15 @@ Created on 2018/01/13
 import argparse
 import random
 import secrets
+import string
 
 
 class PyPagen(object):
     '''
     ordinary password generator
     '''
-    SEQ_FUL = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ" \
-        "[]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+    SEQ_FUL = string.ascii_lowercase + string.ascii_uppercase + \
+        string.digits + string.punctuation
     SEQ_ALW = "abcdefghijklmnopqrstuvwxyz"
     SEQ_AUP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     SEQ_NUM = "0123456789"
