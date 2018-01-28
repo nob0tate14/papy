@@ -90,6 +90,42 @@ class TestPyPagen(unittest.TestCase):
         print(pw)
         self.assertEqual(len(pw), 3)
 
+    def test_pwchar_mix(self):
+        print("test_pwchar_mix")
+        pg = PyPagen()
+        pw = pg.get_secret(num=False, symbol=False)
+        print(pw)
+        expect = pg.seq_alw + pg.seq_aup
+        b1 = False
+        b2 = False
+        for s in pw:
+            if s not in expect:
+                self.assertTrue(False, "no seq char in pw string")
+            if s in pg.seq_alw:
+                b1 = True
+            if s in pg.seq_aup:
+                b2 = True
+        self.assertTrue(b1, "no seq char in pw string")
+        self.assertTrue(b2, "no seq char in pw string")
+
+    def test_pwchar_mix2(self):
+        print("test_pwchar_mix2")
+        pg = PyPagen()
+        pw = pg.get_secret(low=False, up=False)
+        print(pw)
+        expect = pg.seq_num + pg.seq_sbl
+        b1 = False
+        b2 = False
+        for s in pw:
+            if s not in expect:
+                self.assertTrue(False, "no seq char in pw string")
+            if s in pg.seq_num:
+                b1 = True
+            if s in pg.seq_sbl:
+                b2 = True
+        self.assertTrue(b1, "no seq char in pw string")
+        self.assertTrue(b2, "no seq char in pw string")
+
 
 if __name__ == "__main__":
     # import sys;sys.argv = ['', 'Test.testPyPagen']
