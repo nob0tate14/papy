@@ -88,11 +88,11 @@ class PyPagen(object):
             loopcount = random.randrange(lenmin, lenmax, 1)
 
         seq_list = []
-        if up is True:
+        if low is True:
             seq_list.append(seq_alw)
             if strict is True:
                 secrt += secrets.choice(seq_alw)
-        if low is True:
+        if up is True:
             seq_list.append(seq_aup)
             if strict is True:
                 secrt += secrets.choice(seq_aup)
